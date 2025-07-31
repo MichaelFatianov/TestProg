@@ -16,6 +16,7 @@ public class GameLifetimeScope : LifetimeScope
         
         builder.RegisterComponentInHierarchy<EndgameUI>().AsSelf().AsImplementedInterfaces();
         builder.RegisterComponentInHierarchy<FinishUI>().AsSelf().AsImplementedInterfaces();
+        builder.RegisterComponentInHierarchy<GameUI>().AsSelf().AsImplementedInterfaces();
         
         builder.Register<PlayerInputHandler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
         builder.Register<TestProgActions>(Lifetime.Singleton).AsSelf();

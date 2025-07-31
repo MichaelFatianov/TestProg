@@ -5,7 +5,7 @@ namespace Main.Scripts.Environment
 {
     public class TrapUnit:MonoBehaviour
     {
-        [SerializeField] private float _damage = 10f;
+        [SerializeField] private float _damage = 25f;
         private float _damageTimeoutDelta;
         
         private void OnTriggerStay(Collider other)

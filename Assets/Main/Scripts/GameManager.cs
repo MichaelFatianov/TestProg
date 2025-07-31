@@ -16,6 +16,7 @@ namespace Main.Scripts
         
         [Inject] private EndgameUI _endgameUI;
         [Inject] private FinishUI _finishUI;
+        [Inject] private GameUI _gamehUI;
         
         void IStartable.Start()
         {
@@ -29,17 +30,19 @@ namespace Main.Scripts
         void OnFinish()
         {
             _finishUI.Show(true);
+            _gamehUI.Show(false);
             _playerInputHandler.Lock(true);
         }
 
         void OnPlayerDamage(float currentHealth)
         {
-            Debug.Log($"Player health left: {currentHealth}");
+           _gamehUI.UpdateHealth(currentHealth);
         }
 
         void OnPlayerDeath()
         {
             _endgameUI.Show(true);
+            _gamehUI.Show(false);
             _playerInputHandler.Lock(true);
         }
 
